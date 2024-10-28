@@ -3,7 +3,7 @@ package rgb.to.hex;
 // Из десятиричную системы счисления в шестнадцатиричную сис. счисления
 public class RgbToHex {
     public static void main(String[] args) {
-        System.out.println(rgb(132, 77, 219));
+        System.out.println(rgb(0, 0, 0));
     }
 
     public static String rgb(int r, int g, int b) {
@@ -11,8 +11,9 @@ public class RgbToHex {
         int[] arrNumbers = {r, g, b};
         for (int i = 0; i < arrNumbers.length; i++) {
             arrNumbers[i] = Math.max(0, Math.min(255, arrNumbers[i]));
-            result.append(Integer.toHexString(arrNumbers[i]));
+           //result.append(Integer.toHexString(arrNumbers[i]));
+            result.append(String.format("%02X",arrNumbers[i]));
         }
-        return result.toString().toUpperCase();
+        return result.toString();
     }
 }
