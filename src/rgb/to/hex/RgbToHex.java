@@ -1,6 +1,7 @@
+package rgb.to.hex;
 
 // Из десятиричную системы счисления в шестнадцатиричную сис. счисления
-public class Main {
+public class RgbToHex {
     public static void main(String[] args) {
         System.out.println(rgb(132, 77, 219));
     }
