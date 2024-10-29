@@ -1,6 +1,8 @@
 package which.are.in;
 
 import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class WhichAreIn {
     public static void main(String[] args) {
@@ -11,21 +13,21 @@ public class WhichAreIn {
     }
 
     public static String[] inArray(String[] array1, String[] array2) {
-        StringBuilder sb = new StringBuilder();
-        String[] resultArr;
-
-        for (String str1 : array1) {
-            boolean isSubstr = false;
-            for (String str2 : array2) {
-                if (str2.contains(str1)) {
-                    isSubstr = true;
-                    break;
-                }
+        Set<String> res = new TreeSet<>();
+        for(int i=0;i<array1.length;i++){
+            if(duplicate(array2, array1[i])){
+                res.add(array1[i]);
             }
-            sb.append(str1).append(",");
         }
-        sb.deleteCharAt(sb.length() - 1);
-        resultArr = sb.toString().split(",");
-        return resultArr;
+        return res.toArray(new String[res.size()]);
+    }
+
+    public static boolean duplicate(String [] container, String element){
+        for (String s : container) {
+            if (s.contains(element)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
