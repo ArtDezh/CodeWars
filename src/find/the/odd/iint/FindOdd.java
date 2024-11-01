@@ -18,18 +18,13 @@ public class FindOdd {
 
         int result = 0;
         Set<Integer> keys = hp.keySet();
-        for (Integer i: keys) {
+        for (Integer i : keys) {
             result = hp.get(i);
-            if (result % 2 !=0) {
+            if (result % 2 != 0) {
+                result = i;
                 break;
             }
         }
-        /*Optional<Map.Entry<Integer, Integer>> result = hp.entrySet()
-                .stream()
-                .filter(entry -> entry.getKey() % 2 != 0)
-                .max(Map.Entry.comparingByKey());
-        if (result.isPresent()) return result.get().getValue();
-        else return 0;*/
         return result;
     }
 }
