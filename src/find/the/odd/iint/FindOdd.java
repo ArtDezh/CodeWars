@@ -1,8 +1,6 @@
 package find.the.odd.iint;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class FindOdd {
     public static void main(String[] args) {
@@ -12,8 +10,8 @@ public class FindOdd {
 
     public static int findIt(int[] a) {
         Map<Integer, Integer> hp = new HashMap<>();
-        for (int i = 0; i < a.length; i++) {
-            hp.put(a[i], hp.getOrDefault(a[i], 0) + 1);
+        for (int j : a) {
+            hp.put(j, hp.getOrDefault(j, 0) + 1);
         }
 
         int result = 0;
