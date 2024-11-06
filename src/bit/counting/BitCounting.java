@@ -6,8 +6,6 @@ public class BitCounting {
     }
 
     public static int countBits(int n) {
-        String binaryRepresentation = Integer.toBinaryString(n);
-        
-        return (int) binaryRepresentation.chars().filter(c -> c == '1').count();
+        return (int) Integer.toBinaryString(n).chars().filter(c -> c == '1').count();
     }
 }
